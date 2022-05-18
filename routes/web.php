@@ -30,6 +30,7 @@ Route::group(['middleware'=>'admin_auth'], function(){
     Route::get('admin/category',[CategoryController::class,'index']);
     Route::get('admin/manage_category',[CategoryController::class,'manage_category']);
     // Route::get('admin/updatepassword',[AdminController::class,'updatepassword']);
+    Route::post('admin/manage_category_process',[CategoryController::class,'manage_category_process'])->name('category.insert');
     
     Route::get('admin/logout', function () {
         session()->forget('ADMIN_LOGIN');
@@ -37,6 +38,8 @@ Route::group(['middleware'=>'admin_auth'], function(){
         session()->flash('error','logout successfully.');
         return redirect('admin');
     });
+
+
 
     
 });
