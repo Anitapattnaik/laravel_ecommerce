@@ -46,7 +46,7 @@
                         </li>
                       
                         <li>
-                            <a href="category">
+                            <a href="category/category">
                                 <i class="fas fa-tachometer-alt"></i>Category</a>
                          
                         </li>

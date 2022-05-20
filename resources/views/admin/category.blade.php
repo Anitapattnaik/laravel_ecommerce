@@ -2,7 +2,7 @@
 
 @section('container')
 <h1>Category</h1>
-<a href="manage_category"><button type="button" class="btn btn-success">Add Category</button></a>
+<a href="category/manage_category"><button type="button" class="btn btn-success">Add Category</button></a>
 
 <div class="row m-t-30">
 
@@ -26,7 +26,8 @@
                         <td>{{$slno++}}</td>
                         <td>{{$list['category_name']}}</td>
                         <td>{{$list['category_slug']}}</td>
-                        <td class="process">Add</td>
+                        <td><a href="{{url('admin/category/delete/')}}/{{$list->id}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                       <a href="{{url('admin/category/delete/')}}/{{$list->id}}"><button type="button" class="btn btn-danger">Edit</button></a></td>
                        
                     </tr>
                  @endforeach

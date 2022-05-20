@@ -2,13 +2,14 @@
 
 @section('container')
 
-<a href="category"><button type="button" class="btn btn-success">Back</button></a>
+<a href="{{ url('admin/category')}}"><button type="button" class="btn btn-success">Back</button></a>
 
 <div class="row m-t-30">
 
     <div class="col-md-12">
     <div class="row">
                             <div class="col-lg-12">
+                               
                                 {{session('message')}}
                                 <div class="card">
                                     <div class="card-header">Manage Category</div>

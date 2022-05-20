@@ -32,8 +32,16 @@ class CategoryController extends Controller
        $model->category_slug = $request->post('category_slug');
        $model->save();
 
-       $request->session()->flash('message','category inserted.');
+       $request->session()->flash('message','category added.');
        return redirect('admin/category');
-    }   
+    }  
+    
+    public function delete(Request $request,$id)
+    {
+        $model = Category::find($id);
+        $model->delete();
+        $request->session()->flash('message','Category deleted.');
+        return redirect('admin/category');
+    }
     
 }
