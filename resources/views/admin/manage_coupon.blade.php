@@ -1,12 +1,9 @@
 @extends('admin.layout')
 
-@section('page_title','Manage Category')
-
-@section('category_select', 'active')
-
+@section('page_title','Manage Coupon')
 @section('container')
 
-<a href="{{ url('admin/category')}}"><button type="button" class="btn btn-success">Back</button></a>
+<a href="{{ url('admin/coupon')}}"><button type="button" class="btn btn-success">Back</button></a>
 
 <div class="row m-t-30">
 
@@ -16,15 +13,15 @@
                                
                                
                                 <div class="card">
-                                    <div class="card-header">Manage Category</div>
+                                    <div class="card-header">Manage Coupon</div>
                                     <div class="card-body">
                                   
-                                        <form action="{{route('category.manage_category_process')}}" method="post">
+                                        <form action="{{route('coupon.manage_coupon_process')}}" method="post">
                                             @csrf
                                             <div class="form-group">
-                                                <label for="category" class="control-label mb-1">Category name</label>
-                                                <input id="category_name" name="category_name" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$category_name}}" required>
-                                                @error('category_name')
+                                                <label for="title" class="control-label mb-1">Coupon title</label>
+                                                <input id="title" name="title" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$title}}" required>
+                                                @error('title')
                                                 <div class="alert alert-danger" role="alert">
 
                                                 {{$message}}
@@ -32,13 +29,24 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group has-success">
-                                                <label for="category_slug" class="control-label mb-1">Category Slug</label>
-                                                <input id="category_slug" name="category_slug" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"
-                                                    autocomplete="cc-name" aria-required="true" aria-invalid="false" value="{{$category_slug}}" aria-describedby="cc-name-error" required>
-                                                @error('category_slug')
+                                                <label for="code" class="control-label mb-1">Coupon code</label>
+                                                <input id="code" name="code" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on code"
+                                                    autocomplete="cc-name" aria-required="true" aria-invalid="false" value="{{$code}}" aria-describedby="cc-name-error" required>
+                                                @error('code')
                                                 <div class="alert alert-danger" role="alert">
 
                                                     {{$message}}
+                                                </div>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="value" class="control-label mb-1">Coupon value</label>
+                                                <input id="value" name="value" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{$value}}" required>
+                                                @error('value')
+                                                <div class="alert alert-danger" role="alert">
+
+                                                {{$message}}
                                                 </div>
                                                 @enderror
                                             </div>

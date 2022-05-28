@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  
-    <title>dashboard</title>
+    <title>@yield('page_title')</title>
 
     <!-- Fontfaces CSS-->
     <link href="{{asset('admin_assets/css/font-face.css')}}" rel="stylesheet" media="all">
@@ -50,6 +50,12 @@
                                 <i class="fas fa-tachometer-alt"></i>Category</a>
                          
                         </li>
+
+                        <li>
+                            <a href="admin/coupon">
+                                <i class="fas fa-tachometer-alt"></i>Coupon</a>
+                         
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -66,15 +72,21 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li>
+                        <li class="@yield('dashboard_select')">
                             <a href="{{url('admin/dashboard')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                          
                         </li>
                       
-                        <li>
-                            <a href="url('admin/category')">
-                                <i class="fas fa-tachometer-alt"></i>Category</a>
+                        <li class="@yield('category_select')">
+                            <a href="{{url('admin/category')}}">
+                                <i class="fas fa-list"></i>Category</a>
+                               
+                        </li>
+
+                        <li class="@yield('coupon_select')">
+                            <a href="{{url('admin/coupon')}}">
+                                <i class="fas fa-tag"></i>Coupon</a>
                          
                         </li>
                     </ul>
